@@ -1,158 +1,156 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
 }
 
+/* Cabeçalho */
 header {
-    background-color: #0077b5;
-    color: white;
-    padding: 50px 0;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 1.2em;
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.nav-list li {
-    margin: 0 20px;
-}
-
-.nav-list a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1em;
-}
-
-/* Seção Certificados */
-.section {
-  padding: 60px 0;
+  background: #222;
+  color: #fff;
+  padding: 20px 0;
   text-align: center;
 }
 
-.certificados-grid {
+header h1 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+header nav ul {
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+header nav a:hover {
+  color: #f39c12;
+}
+
+/* Seções */
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #222;
+  border-bottom: 2px solid #f39c12;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Sobre */
+#sobre p {
+  text-align: center;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Projetos */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.projetos-grid .projeto {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.projetos-grid .projeto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Certificados */
+.certificados-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
   margin-top: 20px;
 }
 
-.certificado-card {
-  background: #fff;
+.certificados-grid a {
+  background: white;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  width: 250px;
-  padding: 20px;
-  transition: transform 0.3s;
-  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.2s, box-shadow 0.3s;
+  flex: 0 1 200px;
 }
 
-.certificado-card:hover {
+.certificados-grid a:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-.certificado-card img {
-  max-width: 100%;
-  border-radius: 5px;
+.certificados-grid img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.certificado-card h3 {
-  margin: 10px 0 5px;
+.certificados-grid p {
+  font-weight: bold;
+  color: #444;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+/* Contato */
+#contato p {
+  text-align: center;
   font-size: 1.1rem;
 }
 
-.certificado-card p {
-  font-size: 0.9rem;
-  color: #666;
+#contato a {
+  color: #f39c12;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-
-.section {
-    padding: 50px 0;
-    text-align: center;
+#contato a:hover {
+  text-decoration: underline;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #0077b5;
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-ul li {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-.project-list {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.project-item {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 45%;
-}
-
-.project-item h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.project-item a {
-    color: #0077b5;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-links a {
-    display: inline-block;
-    margin: 10px;
-    color: #0077b5;
-    text-decoration: none;
-    font-size: 1.1em;
-}
-
+/* Rodapé */
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    font-size: 1em;
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #fff;
+  margin-top: 40px;
 }
