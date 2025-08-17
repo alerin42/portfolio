@@ -43,6 +43,50 @@ header p {
     font-size: 1.1em;
 }
 
+/* Seção Certificados */
+.section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.certificados-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.certificado-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 250px;
+  padding: 20px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.certificado-card:hover {
+  transform: translateY(-5px);
+}
+
+.certificado-card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.certificado-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.1rem;
+}
+
+.certificado-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
 .section {
     padding: 50px 0;
     text-align: center;
