@@ -1,100 +1,79 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Alexandre Carvalho</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio de Alexandre Carvalho</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#projects">Projetos</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-            </nav>
-            <h1>Olá, eu sou Alexandre Carvalho</h1>
-            <p>Desenvolvedor de Software | Analista de Sistemas</p>
-        </div>
-    </header>
+  <!-- Cabeçalho -->
+  <header>
+    <nav>
+      <h1>Alexandre Carvalho</h1>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#certificados">Certificados</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<!-- Seção Certificados -->
-<section id="certificados" class="section">
-  <div class="container">
-    <h2>Certificados</h2>
-    <p>Confira meus cursos e certificações concluídas.</p>
+  <!-- Seção inicial -->
+  <section id="inicio" class="hero">
+    <h2>Bem-vindo ao meu Portfólio</h2>
+    <p>Sou desenvolvedor apaixonado por tecnologia, apaixonado por backend, frontend e integração de sistemas.</p>
+  </section>
 
-    <div class="certificados-grid" id="certificados-grid">
-      <!-- Os certificados serão carregados aqui via JS -->
+  <!-- Sobre -->
+  <section id="sobre">
+    <h2>Sobre Mim</h2>
+    <p>
+      Tenho experiência em <strong>C#, .NET, Angular, TypeScript, SQL Server, PostgreSQL</strong> e outras tecnologias. 
+      Atualmente trabalho como Analista de Sistemas e busco sempre melhorar minhas habilidades técnicas.
+    </p>
+  </section>
+
+  <!-- Projetos -->
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <div class="projeto">
+      <h3>UberApp</h3>
+      <p>Integração com a API da Uber para listagem e gerenciamento de corridas.</p>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Certificados -->
+  <section id="certificados">
+    <h2>Certificados</h2>
+    <div class="certificados-grid">
+      <a href="https://drive.google.com/file/d/1SK1f7EYCqaVaoM5jm2oV2e-0_CYXcgqO/view?usp=drive_link" target="_blank">
+        <img src="certificados/angular.png" alt="Certificado Angular">
+        <p>Angular</p>
+      </a>
+      <a href="https://drive.google.com/file/d/1IfCUgBmYe9PcXLIaawDVelUoUQsik5yd/view?usp=drive_link" target="_blank">
+        <img src="certificados/csharp.png" alt="Certificado C#">
+        <p>C#</p>
+      </a>
+      <a href="https://drive.google.com/file/d/1mZhkYpzffZJiI4tT-0jBEYNo1OW2ZVJk/view?usp=drive_link" target="_blank">
+        <img src="certificados/javascript.png" alt="Certificado JavaScript">
+        <p>HTML, CSS e JavaScript</p>
+      </a>
+    </div>
+  </section>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2>Sobre Mim</h2>
-            <p>Sou um profissional apaixonado por tecnologia, com experiência em desenvolvimento de software, integração de sistemas e soluções em TI.</p>
-        </div>
-    </section>
+  <!-- Contato -->
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>📧 Email: <a href="mailto:dev.alexandrecarvalho@gmail.com">dev.alexandrecarvalho@gmail.com</a></p>
+    <p>🔗 <a href="https://www.linkedin.com/in/alexandre-carvalho-8887621a1/" target="_blank">Meu LinkedIn</a></p>
+    <p>💻 <a href="https://github.com/alerin42" target="_blank">Meu GitHub</a></p>
+  </section>
 
-    <section id="skills" class="section">
-        <div class="container">
-            <h2>Habilidades</h2>
-            <ul>
-                <li>Desenvolvimento Web (HTML, CSS, JavaScript, React, Angular)</li>
-                <li>Desenvolvimento Backend (Node.js, .NET Core)</li>
-                <li>Banco de Dados (SQL Server, PostgreSQL, MongoDB)</li>
-                <li>Testes Automatizados (Cypress, Jest)</li>
-                <li>DevOps (Docker, AWS)</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="projects" class="section">
-        <div class="container">
-            <h2>Projetos</h2>
-            <div class="project-list">
-                <div class="project-item">
-                    <h3>Projeto 1</h3>
-                    <p>Descrição do projeto 1.</p>
-                    <a href="#" target="_blank">Ver mais</a>
-                </div>
-                <div class="project-item">
-                    <h3>Projeto 2</h3>
-                    <p>Descrição do projeto 2.</p>
-                    <a href="#" target="_blank">Ver mais</a>
-                </div>
-                <!-- Adicione mais projetos conforme necessário -->
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Contato</h2>
-            <p>Entre em contato comigo através das redes sociais ou e-mail.</p>
-            <div class="contact-links">
-                <a href="mailto:seuemail@dominio.com">Email</a>
-                <a href="https://www.linkedin.com/in/alexandre-carvalho-8887621a1/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/alerin42" target="_blank">GitHub</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Alexandre Carvalho</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <script src="certificados.js"></script>
-
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 - Alexandre Carvalho</p>
+  </footer>
 </body>
 </html>
