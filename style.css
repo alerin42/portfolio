@@ -101,30 +101,47 @@ section h2::after {
 }
 
 /* ===== CERTIFICADOS (CARROSSEL) ===== */
+#certificados {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f7f9fc;
+}
+
+#certificados h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  position: relative;
+  display: inline-block;
+}
+
+#certificados h2::after {
+  content: "";
+  width: 60%;
+  height: 4px;
+  background: #f1c40f;
+  position: absolute;
+  bottom: -10px;
+  left: 20%;
+  border-radius: 2px;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
 .certificados-carousel {
   display: flex;
   gap: 30px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 20px;
+  transition: transform 0.5s ease-in-out;
 }
 
-.certificados-carousel::-webkit-scrollbar {
-  height: 10px;
-}
-
-.certificados-carousel::-webkit-scrollbar-thumb {
-  background: #2a5298;
-  border-radius: 5px;
-}
-
-.certificados-carousel::-webkit-scrollbar-track {
-  background: #e0e0e0;
-  border-radius: 5px;
-}
-
+/* Cada card */
 .certificados-carousel a {
-  flex: 0 0 auto;
+  flex: 0 0 280px;
   background: white;
   border-radius: 12px;
   padding: 20px;
@@ -132,7 +149,6 @@ section h2::after {
   text-decoration: none;
   color: #333;
   transition: transform 0.3s, box-shadow 0.3s;
-  width: 220px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -150,8 +166,55 @@ section h2::after {
 .certificados-carousel p {
   font-weight: 600;
   color: #2c3e50;
-  margin-top: 8px;
   font-size: 1rem;
+  margin-top: 8px;
+}
+
+/* Botões de navegação */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2a5298;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: #1a3d7c;
+}
+
+.carousel-btn.prev {
+  left: -40px;
+}
+
+.carousel-btn.next {
+  right: -40px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1024px) {
+  .certificados-carousel a {
+    flex: 0 0 45%; /* 2 cards por vez */
+  }
+}
+
+@media (max-width: 768px) {
+  .certificados-carousel a {
+    flex: 0 0 80%; /* 1 card por vez */
+  }
+  .carousel-btn.prev {
+    left: 5px;
+  }
+  .carousel-btn.next {
+    right: 5px;
+  }
 }
 
 /* ===== CONTATO ===== */

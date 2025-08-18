@@ -46,21 +46,26 @@
 <!-- ===== CERTIFICADOS ===== -->
 <section id="certificados">
   <h2>Certificados</h2>
-  <div class="certificados-carousel">
-    <a href="https://drive.google.com/file/d/1SK1f7EYCqaVaoM5jm2oV2e-0_CYXcgqO/view?usp=drive_link" target="_blank">
-      <img src="certificados/angular.png" alt="Certificado Angular">
-      <p>Angular</p>
-    </a>
-    <a href="https://drive.google.com/file/d/1IfCUgBmYe9PcXLIaawDVelUoUQsik5yd/view?usp=drive_link" target="_blank">
-      <img src="certificados/csharp.png" alt="Certificado C#">
-      <p>C#</p>
-    </a>
-    <a href="https://drive.google.com/file/d/1mZhkYpzffZJiI4tT-0jBEYNo1OW2ZVJk/view?usp=drive_link" target="_blank">
-      <img src="certificados/javascript.png" alt="Certificado JavaScript">
-      <p>HTML, CSS e JavaScript</p>
-    </a>
+  <div class="carousel-container">
+    <button class="carousel-btn prev">&#10094;</button>
+    <div class="certificados-carousel">
+      <a href="https://drive.google.com/file/d/1SK1f7EYCqaVaoM5jm2oV2e-0_CYXcgqO/view" target="_blank">
+        <img src="certificados/angular.png" alt="Certificado Angular">
+        <p>Angular</p>
+      </a>
+      <a href="https://drive.google.com/file/d/1IfCUgBmYe9PcXLIaawDVelUoUQsik5yd/view" target="_blank">
+        <img src="certificados/csharp.png" alt="Certificado C#">
+        <p>C#</p>
+      </a>
+      <a href="https://drive.google.com/file/d/1mZhkYpzffZJiI4tT-0jBEYNo1OW2ZVJk/view" target="_blank">
+        <img src="certificados/javascript.png" alt="Certificado JavaScript">
+        <p>HTML, CSS e JavaScript</p>
+      </a>
+    </div>
+    <button class="carousel-btn next">&#10095;</button>
   </div>
 </section>
+<!-- CERTIFICADOS FIM-->
 
 
   <!-- ===== CONTATO ===== -->
@@ -71,9 +76,34 @@
     <p>GitHub: <a href="https://github.com/alerin42" target="_blank">alerin42</a></p>
   </section>
 
+<script>
+  const carousel = document.querySelector(".certificados-carousel");
+  const prevBtn = document.querySelector(".carousel-btn.prev");
+  const nextBtn = document.querySelector(".carousel-btn.next");
+
+  let scrollAmount = 0;
+  let cardWidth = carousel.querySelector("a").offsetWidth + 30; // largura + gap
+
+  // Botão próximo
+  nextBtn.addEventListener("click", () => {
+    carousel.scrollBy({ left: cardWidth, behavior: "smooth" });
+  });
+
+  // Botão anterior
+  prevBtn.addEventListener("click", () => {
+    carousel.scrollBy({ left: -cardWidth, behavior: "smooth" });
+  });
+
+  // Ajusta largura ao redimensionar tela
+  window.addEventListener("resize", () => {
+    cardWidth = carousel.querySelector("a").offsetWidth + 30;
+  });
+</script>
+
+
   <!-- ===== RODAPÉ ===== -->
   <footer>
-    <p>© 2025 - Alexandre Carvalho | Desenvolvido com 💻 e ☕</p>
+    <p>© 2025 - Alexandre Carvalho</p>
   </footer>
 </body>
 </html>
