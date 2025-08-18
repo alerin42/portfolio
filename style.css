@@ -1,4 +1,3 @@
-/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -7,24 +6,25 @@
 
 body {
   font-family: "Poppins", Arial, sans-serif;
-  background: #f4f6f9;
-  color: #2c3e50;
+  background: #2b2f38; /* chumbo */
+  color: #e4e6eb;
   line-height: 1.6;
 }
 
 /* ===== HEADER ===== */
 header {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: linear-gradient(135deg, #353b48, #2f3640);
   color: #fff;
   padding: 25px 0;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 header h1 {
   font-size: 2.2rem;
   margin-bottom: 10px;
   font-weight: 600;
+  color: #f8f9fa;
 }
 
 header nav ul {
@@ -36,13 +36,13 @@ header nav ul {
 
 header nav a {
   text-decoration: none;
-  color: #fff;
+  color: #dcdde1;
   font-weight: 500;
   transition: color 0.3s, transform 0.2s;
 }
 
 header nav a:hover {
-  color: #f1c40f;
+  color: #00a8ff;
   transform: translateY(-3px);
 }
 
@@ -57,7 +57,7 @@ section h2 {
   text-align: center;
   margin-bottom: 50px;
   font-size: 2rem;
-  color: #2c3e50;
+  color: #f5f6fa;
   position: relative;
 }
 
@@ -65,19 +65,10 @@ section h2::after {
   content: "";
   width: 80px;
   height: 4px;
-  background: #f1c40f;
+  background: #00a8ff;
   display: block;
   margin: 10px auto 0;
   border-radius: 2px;
-}
-
-/* ===== SOBRE ===== */
-#sobre p {
-  text-align: center;
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: auto;
-  color: #555;
 }
 
 /* ===== PROJETOS ===== */
@@ -88,73 +79,53 @@ section h2::after {
 }
 
 .projeto {
-  background: white;
+  background: #3a3f47;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s, box-shadow 0.3s;
+  color: #e4e6eb;
 }
 
 .projeto:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 168, 255, 0.4);
 }
 
 /* ===== CERTIFICADOS (CARROSSEL) ===== */
-#certificados {
-  text-align: center;
-  padding: 60px 20px;
-  background: #f7f9fc;
-}
-
-#certificados h2 {
-  font-size: 2rem;
-  margin-bottom: 25px;
-  color: #2c3e50;
+.certificados-container {
   position: relative;
-  display: inline-block;
-}
-
-#certificados h2::after {
-  content: "";
-  width: 60%;
-  height: 4px;
-  background: #f1c40f;
-  position: absolute;
-  bottom: -10px;
-  left: 20%;
-  border-radius: 2px;
-}
-
-.carousel-container {
-  position: relative;
-  max-width: 1000px;
-  margin: auto;
-  overflow: hidden;
 }
 
 .certificados-carousel {
   display: flex;
   gap: 30px;
-  transition: transform 0.5s ease-in-out;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px;
+  scrollbar-width: none;
 }
 
-/* Cada card */
+.certificados-carousel::-webkit-scrollbar {
+  display: none;
+}
+
 .certificados-carousel a {
-  flex: 0 0 280px;
-  background: white;
+  flex: 0 0 auto;
+  background: #3a3f47;
   border-radius: 12px;
   padding: 20px;
   text-align: center;
   text-decoration: none;
-  color: #333;
+  color: #f1f2f6;
   transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
 }
 
 .certificados-carousel a:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 168, 255, 0.6);
 }
 
 .certificados-carousel img {
@@ -165,56 +136,37 @@ section h2::after {
 
 .certificados-carousel p {
   font-weight: 600;
-  color: #2c3e50;
-  font-size: 1rem;
+  color: #f5f6fa;
   margin-top: 8px;
+  font-size: 1rem;
 }
 
-/* Botões de navegação */
+/* Botões do carrossel */
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #2a5298;
+  background: rgba(0, 168, 255, 0.8);
   border: none;
   color: white;
   font-size: 2rem;
-  padding: 10px 15px;
-  cursor: pointer;
+  padding: 10px;
   border-radius: 50%;
+  cursor: pointer;
   transition: background 0.3s;
-  z-index: 10;
+  display: none; /* escondido até o JS decidir */
 }
 
 .carousel-btn:hover {
-  background: #1a3d7c;
+  background: rgba(0, 168, 255, 1);
 }
 
 .carousel-btn.prev {
-  left: -40px;
+  left: -20px;
 }
 
 .carousel-btn.next {
-  right: -40px;
-}
-
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 1024px) {
-  .certificados-carousel a {
-    flex: 0 0 45%; /* 2 cards por vez */
-  }
-}
-
-@media (max-width: 768px) {
-  .certificados-carousel a {
-    flex: 0 0 80%; /* 1 card por vez */
-  }
-  .carousel-btn.prev {
-    left: 5px;
-  }
-  .carousel-btn.next {
-    right: 5px;
-  }
+  right: -20px;
 }
 
 /* ===== CONTATO ===== */
@@ -224,7 +176,7 @@ section h2::after {
 }
 
 #contato a {
-  color: #2a5298;
+  color: #00a8ff;
   font-weight: bold;
   text-decoration: none;
 }
@@ -238,8 +190,8 @@ section h2::after {
 footer {
   text-align: center;
   padding: 20px;
-  background: #1e3c72;
-  color: #fff;
+  background: #353b48;
+  color: #dcdde1;
   margin-top: 40px;
   font-size: 0.9rem;
 }

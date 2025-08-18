@@ -5,81 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio - Alexandre Carvalho</title>
   <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Portfólio de Alexandre Carvalho - Analista de Sistemas e Desenvolvedor Web/Desktop.">
+  <meta name="author" content="Alexandre Carvalho">
 </head>
 <body>
   <!-- ===== HEADER ===== -->
   <header>
-    <h1>Portfólio de Alexandre Carvalho</h1>
-    <nav>
-      <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#certificados">Certificados</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <h1>Alexandre Carvalho</h1>
+      <nav>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#certificados">Certificados</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <!-- ===== SOBRE ===== -->
-  <section id="sobre">
-    <h2>Sobre</h2>
-    <p>
-      Sou desenvolvedor apaixonado por tecnologia, com experiência em
-      <strong>C#</strong>, <strong>JavaScript</strong>, <strong>Angular</strong>.
-      Gosto de criar soluções eficientes, escaláveis e com código limpo.
-    </p>
-  </section>
+  <main>
+    <section id="sobre">
+      <h2>Sobre Mim</h2>
+      <p>
+        Oi! Eu sou o <strong>Alexandre Carvalho</strong>, analista de sistemas e desenvolvedor apaixonado por tecnologia,
+        programação e por criar soluções que realmente fazem a diferença. 
+        Gosto de pensar, codar e automatizar tudo que puder — especialmente quando isso torna o dia a dia mais simples e eficiente.
+      </p>
+      <p>
+        Tenho experiência em desenvolvimento <strong>Web</strong> utilizando <em>HTML, CSS e JavaScript</em> 
+        e também em aplicações <strong>Desktop</strong>, com foco em <em>C#</em>.
+      </p>
+    </section>
 
-  <!-- ===== PROJETOS ===== -->
-  <section id="projetos">
-    <h2>Projetos</h2>
-    <div class="projetos-grid">
-      <div class="projeto">
-        <h3>UberApp</h3>
-        <p>Integração com API da Uber para cálculo e listagem automática de corridas.</p>
+    <!-- ===== PROJETOS ===== -->
+    <section id="projetos">
+      <h2>Projetos</h2>
+      <div class="projetos-grid">
+        <article class="projeto">
+          <h3>UberApp</h3>
+          <p>Integração com a API da Uber para gerenciamento de corridas.</p>
+        </article>
+        <!-- futuros projetos podem ser adicionados aqui -->
       </div>
-      <div class="projeto">
+    </section>
 
-      <div class="projeto">
-
-    </div>
-  </section>
-
-  <!-- ===== CERTIFICADOS ===== -->
-  <section id="certificados">
-    <h2>Certificados</h2>
-    <div class="carousel-container">
-      <button class="carousel-btn prev">‹</button>
-
-      <div class="certificados-carousel">
-        <a href="https://drive.google.com/file/d/1SK1f7EYCqaVaoM5jm2oV2e-0_CYXcgqO/view" target="_blank" class="fade-card">
-          <img src="img/angular.png" alt="Angular">
-          <p>Angular</p>
-        </a>
-        <a href="https://drive.google.com/file/d/1IfCUgBmYe9PcXLIaawDVelUoUQsik5yd/view" target="_blank" class="fade-card">
-          <img src="img/csharp.png" alt="C#">
-          <p>C#</p>
-        </a>
-        <a href="https://drive.google.com/file/d/1mZhkYpzffZJiI4tT-0jBEYNo1OW2ZVJk/view" target="_blank" class="fade-card">
-          <img src="img/javascript.png" alt="JavaScript">
-          <p>HTML, CSS e JavaScript</p>
-        </a>
+    <!-- ===== CERTIFICADOS ===== -->
+    <section id="certificados">
+      <h2>Certificados</h2>
+      <div class="certificados-container">
+        <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+        <div class="certificados-carousel" id="certificadosCarousel">
+          <a href="https://drive.google.com/file/d/1SK1f7EYCqaVaoM5jm2oV2e-0_CYXcgqO/view" target="_blank" rel="noopener noreferrer">
+            <img src="img/angular.png" alt="Certificado de Angular" />
+            <p>Angular</p>
+          </a>
+          <a href="https://drive.google.com/file/d/1IfCUgBmYe9PcXLIaawDVelUoUQsik5yd/view" target="_blank" rel="noopener noreferrer">
+            <img src="img/csharp.png" alt="Certificado de C#" />
+            <p>C#</p>
+          </a>
+          <a href="https://drive.google.com/file/d/1mZhkYpzffZJiI4tT-0jBEYNo1OW2ZVJk/view" target="_blank" rel="noopener noreferrer">
+            <img src="img/javascript.png" alt="Certificado de JavaScript" />
+            <p>HTML, CSS e JS</p>
+          </a>
+        </div>
+        <button class="carousel-btn next" aria-label="Próximo">&#10095;</button>
       </div>
+    </section>
 
-      <button class="carousel-btn next">›</button>
-    </div>
-  </section>
-
-  <!-- ===== CONTATO ===== -->
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>📩 Me chama no <a href="mailto:dev.alexandrecarvalho@gmail.com">Email</a></p>
-    <p>💼 Veja também meu <a href="https://www.linkedin.com/in/alexandre-carvalho-8887621a1/" target="_blank">LinkedIn</a></p>
-  </section>
+    <!-- ===== CONTATO ===== -->
+    <section id="contato">
+      <h2>Contato</h2>
+      <p>Você pode me encontrar nas seguintes redes:</p>
+      <p>
+        <a href="https://www.linkedin.com/in/alexandre-carvalho-8887621a1/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+        <a href="https://github.com/alerin42" target="_blank" rel="noopener noreferrer">GitHub</a> |
+        <a href="https://wa.me/5531992856328" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </p>
+    </section>
+  </main>
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <p>&copy; 2025 Alexandre Carvalho - Todos os direitos reservados.</p>
+    <p>&copy; 2025 Alexandre Carvalho. Todos os direitos reservados.</p>
   </footer>
 
   <script src="script.js"></script>

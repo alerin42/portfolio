@@ -1,46 +1,26 @@
-const carousel = document.querySelector(".certificados-carousel");
-const prevBtn = document.querySelector(".carousel-btn.prev");
-const nextBtn = document.querySelector(".carousel-btn.next");
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.getElementById("certificadosCarousel");
+  const prevBtn = document.querySelector(".carousel-btn.prev");
+  const nextBtn = document.querySelector(".carousel-btn.next");
 
-let cardWidth = carousel.querySelector("a").offsetWidth + 30;
+  const checkScroll = () => {
+    if (carousel.scrollWidth > carousel.clientWidth) {
+      prevBtn.style.display = "block";
+      nextBtn.style.display = "block";
+    } else {
+      prevBtn.style.display = "none";
+      nextBtn.style.display = "none";
+    }
+  };
 
-// Função que mostra/esconde botões
-function toggleButtons() {
-  prevBtn.style.display = carousel.scrollLeft > 0 ? "block" : "none";
-  nextBtn.style.display =
-    carousel.scrollLeft + carousel.clientWidth < carousel.scrollWidth
-      ? "block"
-      : "none";
-}
+  prevBtn.addEventListener("click", () => {
+    carousel.scrollBy({ left: -250, behavior: "smooth" });
+  });
 
-nextBtn.addEventListener("click", () => {
-  carousel.scrollBy({ left: cardWidth, behavior: "smooth" });
-});
+  nextBtn.addEventListener("click", () => {
+    carousel.scrollBy({ left: 250, behavior: "smooth" });
+  });
 
-prevBtn.addEventListener("click", () => {
-  carousel.scrollBy({ left: -cardWidth, behavior: "smooth" });
-});
-
-carousel.addEventListener("scroll", toggleButtons);
-
-window.addEventListener("load", toggleButtons);
-window.addEventListener("resize", () => {
-  cardWidth = carousel.querySelector("a").offsetWidth + 30;
-  toggleButtons();
-});
-
-/* ===== ANIMAÇÃO DE ENTRADA ===== */
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
-
-document.querySelectorAll(".certificados-carousel a").forEach((card) => {
-  observer.observe(card);
+  checkScroll();
+  window.addEventListener("resize", checkScroll);
 });
