@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio - Alexandre Carvalho</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- ===== CABEÇALHO ===== -->
+  <!-- ===== HEADER ===== -->
   <header>
-    <h1>Alexandre Carvalho</h1>
+    <h1>Portfólio de Alexandre Carvalho</h1>
     <nav>
       <ul>
         <li><a href="#sobre">Sobre</a></li>
@@ -23,12 +22,12 @@
 
   <!-- ===== SOBRE ===== -->
   <section id="sobre">
-    <h2>Sobre mim</h2>
+    <h2>Sobre</h2>
     <p>
-      Analista de Sistemas com experiência em desenvolvimento web, desktop e banco de dados. 
-      Atuo com tecnologias como .NET, C#, Angular, Node.js, TypeScript, além de 
-      administração de bancos de dados SQL Server, PostgreSQL e MySQL. 
-      Apaixonado por tecnologia, esportes e sempre em busca de evolução constante.
+      Sou desenvolvedor apaixonado por tecnologia, com experiência em
+      <strong>C#</strong>, <strong>JavaScript</strong>, <strong>Angular</strong> 
+      e outras stacks modernas.  
+      Gosto de criar soluções eficientes, escaláveis e com código limpo.
     </p>
   </section>
 
@@ -38,72 +37,56 @@
     <div class="projetos-grid">
       <div class="projeto">
         <h3>UberApp</h3>
-        <p>Integração com a API da Uber para listar corridas automaticamente.</p>
+        <p>Integração com API da Uber para cálculo e listagem automática de corridas.</p>
+      </div>
+      <div class="projeto">
+        <h3>Patas Perfumadas</h3>
+        <p>Plataforma de gestão e marketing digital para pet shop.</p>
+      </div>
+      <div class="projeto">
+        <h3>NGUpdate</h3>
+        <p>Ferramenta para automatização de scripts SQL e atualização de componentes.</p>
       </div>
     </div>
   </section>
 
-<!-- ===== CERTIFICADOS ===== -->
-<section id="certificados">
-  <h2>Certificados</h2>
-  <div class="carousel-container">
-    <button class="carousel-btn prev">&#10094;</button>
-    <div class="certificados-carousel">
-      <a href="https://drive.google.com/file/d/1SK1f7EYCqaVaoM5jm2oV2e-0_CYXcgqO/view" target="_blank">
-        <img src="certificados/angular.png" alt="Certificado Angular">
-        <p>Angular</p>
-      </a>
-      <a href="https://drive.google.com/file/d/1IfCUgBmYe9PcXLIaawDVelUoUQsik5yd/view" target="_blank">
-        <img src="certificados/csharp.png" alt="Certificado C#">
-        <p>C#</p>
-      </a>
-      <a href="https://drive.google.com/file/d/1mZhkYpzffZJiI4tT-0jBEYNo1OW2ZVJk/view" target="_blank">
-        <img src="certificados/javascript.png" alt="Certificado JavaScript">
-        <p>HTML, CSS e JavaScript</p>
-      </a>
-    </div>
-    <button class="carousel-btn next">&#10095;</button>
-  </div>
-</section>
-<!-- CERTIFICADOS FIM-->
+  <!-- ===== CERTIFICADOS ===== -->
+  <section id="certificados">
+    <h2>Certificados</h2>
+    <div class="carousel-container">
+      <button class="carousel-btn prev">‹</button>
 
+      <div class="certificados-carousel">
+        <a href="https://drive.google.com/file/d/1SK1f7EYCqaVaoM5jm2oV2e-0_CYXcgqO/view" target="_blank">
+          <img src="img/angular.png" alt="Angular">
+          <p>Angular</p>
+        </a>
+        <a href="https://drive.google.com/file/d/1IfCUgBmYe9PcXLIaawDVelUoUQsik5yd/view" target="_blank">
+          <img src="img/csharp.png" alt="C#">
+          <p>C#</p>
+        </a>
+        <a href="https://drive.google.com/file/d/1mZhkYpzffZJiI4tT-0jBEYNo1OW2ZVJk/view" target="_blank">
+          <img src="img/javascript.png" alt="JavaScript">
+          <p>HTML, CSS e JavaScript</p>
+        </a>
+      </div>
+
+      <button class="carousel-btn next">›</button>
+    </div>
+  </section>
 
   <!-- ===== CONTATO ===== -->
   <section id="contato">
     <h2>Contato</h2>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/alexandre-carvalho-8887621a1/" target="_blank">Alexandre Carvalho</a></p>
-    <p>WhatsApp: <a href="https://wa.me/5531992856328" target="_blank">(31) 99285-6328</a></p>
-    <p>GitHub: <a href="https://github.com/alerin42" target="_blank">alerin42</a></p>
+    <p>📩 Entre em contato pelo meu <a href="mailto:alexandre@email.com">email</a></p>
+    <p>💼 Veja também meu <a href="https://www.linkedin.com/in/alexandre-carvalho-8887621a1/" target="_blank">LinkedIn</a></p>
   </section>
 
-<script>
-  const carousel = document.querySelector(".certificados-carousel");
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const nextBtn = document.querySelector(".carousel-btn.next");
-
-  let scrollAmount = 0;
-  let cardWidth = carousel.querySelector("a").offsetWidth + 30; // largura + gap
-
-  // Botão próximo
-  nextBtn.addEventListener("click", () => {
-    carousel.scrollBy({ left: cardWidth, behavior: "smooth" });
-  });
-
-  // Botão anterior
-  prevBtn.addEventListener("click", () => {
-    carousel.scrollBy({ left: -cardWidth, behavior: "smooth" });
-  });
-
-  // Ajusta largura ao redimensionar tela
-  window.addEventListener("resize", () => {
-    cardWidth = carousel.querySelector("a").offsetWidth + 30;
-  });
-</script>
-
-
-  <!-- ===== RODAPÉ ===== -->
+  <!-- ===== FOOTER ===== -->
   <footer>
-    <p>© 2025 - Alexandre Carvalho</p>
+    <p>&copy; 2025 Alexandre Carvalho - Todos os direitos reservados.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
