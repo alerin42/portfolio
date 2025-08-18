@@ -1,34 +1,24 @@
+const carousel = document.getElementById("certificadosCarousel");
+const prevBtn = document.querySelector(".carousel-btn.prev");
+const nextBtn = document.querySelector(".carousel-btn.next");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const carousel = document.getElementById("certificadosCarousel");
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const nextBtn = document.querySelector(".carousel-btn.next");
+// Função para atualizar visibilidade das setas
+function updateArrows() {
+  const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+  prevBtn.style.display = carousel.scrollLeft > 0 ? "block" : "none";
+  nextBtn.style.display = carousel.scrollLeft < maxScrollLeft ? "block" : "none";
+}
 
-  const scrollAmount = 250; // px que o carrossel anda por clique
-
-  // Mostrar/esconder botões dinamicamente
-  const updateButtons = () => {
-    prevBtn.style.display = carousel.scrollLeft > 0 ? "block" : "none";
-    nextBtn.style.display =
-      carousel.scrollLeft < carousel.scrollWidth - carousel.clientWidth
-        ? "block"
-        : "none";
-  };
-
-  // Evento clique nos botões
-  prevBtn.addEventListener("click", () => {
-    carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    setTimeout(updateButtons, 400);
-  });
-
-  nextBtn.addEventListener("click", () => {
-    carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    setTimeout(updateButtons, 400);
-  });
-
-  // Atualizar na rolagem manual também
-  carousel.addEventListener("scroll", updateButtons);
-
-  // Inicializar
-  updateButtons();
+// Scroll ao clicar nos botões
+prevBtn.addEventListener("click", () => {
+  carousel.scrollBy({ left: -250, behavior: "smooth" });
 });
+nextBtn.addEventListener("click", () => {
+  carousel.scrollBy({ left: 250, behavior: "smooth" });
+});
+
+// Atualiza ao rolar
+carousel.addEventListener("scroll", updateArrows);
+
+// Chama no início
+updateArrows();
